@@ -1,8 +1,9 @@
 {
   "name": "10",
   "scripts": {
-    "test:unit": "jest",
-    "test":  "npm i && jest"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    
   },
   "author": "Maria",
   "dependencies": {
@@ -11,10 +12,6 @@
     "redom": "^3.29.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
-    "babel-jest": "^29.6.1",
-    "buffer": "^6.0.3",
-    "jest": "^29.6.1"
+    "buffer": "^6.0.3"
   }
 }
