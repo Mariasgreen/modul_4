@@ -17,22 +17,22 @@
 }
 
 .wrapper {
-  width: 100%;
-  min-height: 100vh;
   background: linear-gradient(242.01deg, #52006ab3 39.15%, #cd113bb3 76.16%);
   justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 100vh;
   padding: 40px;
   display: flex;
 }
 
 .card {
-  width: 415px;
-  height: 809px;
   background: #f1f1f1d4;
   border-radius: 20px;
   flex-direction: column;
   align-items: center;
+  width: 415px;
+  height: 809px;
   padding: 25px 25px 45px;
   font-family: Inter;
   font-weight: normal;
@@ -53,9 +53,9 @@
 
 .secure:before {
   content: "";
+  background: url("shield.56a78d7b.svg");
   width: 16px;
   height: 17px;
-  background: url("shield.56a78d7b.svg");
   position: absolute;
   top: 50%;
   left: 0;
@@ -63,20 +63,20 @@
 }
 
 .credit-card {
-  width: 365px;
-  height: 190px;
   background: linear-gradient(258.77deg, #c893d887 26.64%, #efa3b6 70.3%);
   border-radius: 32px;
   flex-direction: column;
   align-items: center;
+  width: 365px;
+  height: 190px;
   margin-bottom: 30px;
   padding: 48px 25px 30px;
   display: flex;
 }
 
 .logos {
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 40px;
   display: flex;
 }
@@ -90,9 +90,9 @@
 }
 
 .card__personal {
-  width: 275px;
   color: #52006a;
   justify-content: space-between;
+  width: 275px;
   font-size: 14px;
   font-weight: 600;
   line-height: 17px;
@@ -100,19 +100,19 @@
 }
 
 .buttons {
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 26px;
   display: flex;
 }
 
 .button {
-  height: 50px;
-  width: 100px;
   color: #52006a;
   cursor: pointer;
   background-color: #0000;
   border: none;
+  width: 100px;
+  height: 50px;
   padding-top: 32px;
   font-size: 15px;
   font-weight: 500;
@@ -128,9 +128,9 @@
 }
 
 .form {
-  max-width: 355px;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 355px;
   display: flex;
 }
 
@@ -147,13 +147,13 @@
 }
 
 .input {
-  width: 355px;
-  height: 60px;
   letter-spacing: .15em;
   color: #52006a;
   background: #f2ecec;
   border: none;
   border-radius: 10px;
+  width: 355px;
+  height: 60px;
   font-size: 19px;
   line-height: 23px;
   box-shadow: 5px 10px 10px #00000040;

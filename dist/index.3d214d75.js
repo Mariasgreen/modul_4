@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"9vOdb":[function(require,module,exports) {
+})({"2UeK4":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -574,11 +574,15 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"bB7Pu":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _redom = require("redom");
-var _creditCardInputMask = require("credit-card-input-mask");
-var _creditCardInputMaskDefault = parcelHelpers.interopDefault(_creditCardInputMask);
-var _validJs = require("./valid.js");
+"use strict";
+var _redom = require("a13ff39a76aa6c5");
+var _creditCardInputMask = _interopRequireDefault(require("18aaab9fcf56c16c"));
+var _valid = require("c1938ce03586a75c");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const body = (0, _redom.el)("body");
 const divWrapper = (0, _redom.el)("div.wrapper");
 const divCard = (0, _redom.el)("div.card");
@@ -640,10 +644,10 @@ button.addEventListener("click", ()=>{
     const cardNumber = inputNumber.value;
     const cardDate = inputDate.value;
     const cvv = inputCVV.value;
-    const isCardHolderValid = (0, _validJs.validateCardHolder)(cardHolder);
-    const isCardNumberValid = (0, _validJs.validateCardNumber)(cardNumber);
-    const isCardDateValid = (0, _validJs.validateCardDate)(cardDate);
-    const isCVVValid = (0, _validJs.validateCVV)(cvv);
+    const isCardHolderValid = (0, _valid.validateCardHolder)(cardHolder);
+    const isCardNumberValid = (0, _valid.validateCardNumber)(cardNumber);
+    const isCardDateValid = (0, _valid.validateCardDate)(cardDate);
+    const isCVVValid = (0, _valid.validateCVV)(cvv);
     const isValid = isCardHolderValid && isCardNumberValid && isCardDateValid && isCVVValid;
     displayValidationMessage(isValid);
 });
@@ -661,7 +665,7 @@ const dateFormat = (event)=>{
     input.value = formattedValue;
 };
 function initializeCreditCardInput() {
-    const formattedCreditCardInput = new (0, _creditCardInputMaskDefault.default)({
+    const formattedCreditCardInput = new _creditCardInputMask.default({
         element: document.querySelector("#cardNumber"),
         pattern: "{{9999}} {{9999}} {{9999}} {{9999}}"
     });
@@ -670,7 +674,7 @@ const updateCardInfo = ()=>{
     const cardHolder = inputHolder.value;
     const cardNumber = inputNumber.value;
     const cardDate = inputDate.value;
-    spanCardNumber.textContent = cardNumber ? cardNumber : "xxxx-xxxx-xxxx-xxxx";
+    spanCardNumber.textContent = cardNumber ? cardNumber : "xxxx xxxx xxxx xxxx";
     spanCardName.textContent = cardHolder ? cardHolder : "John Doe";
     spanCardDate.textContent = cardDate ? cardDate : "MM/YY";
 };
@@ -705,7 +709,7 @@ divWrapper.appendChild(divCard);
 (0, _redom.mount)(body, divWrapper);
 (0, _redom.mount)(document.documentElement, body);
 
-},{"redom":"iahd6","credit-card-input-mask":"bO9Hm","@parcel/transformer-js/src/esmodule-helpers.js":"dVOym","./valid.js":"2xjKo"}],"iahd6":[function(require,module,exports) {
+},{"a13ff39a76aa6c5":"iahd6","18aaab9fcf56c16c":"bO9Hm","c1938ce03586a75c":"2xjKo"}],"iahd6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "List", ()=>List);
@@ -1182,7 +1186,7 @@ svg.extend = function extendSvg() {
 };
 svg.ns = ns;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"dVOym"}],"dVOym":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2268,12 +2272,14 @@ var NoopKeyboardStrategy = /** @class */ function(_super) {
 exports.NoopKeyboardStrategy = NoopKeyboardStrategy;
 
 },{"69678c37e1e62446":"eR489"}],"2xjKo":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "validateCardHolder", ()=>validateCardHolder);
-parcelHelpers.export(exports, "validateCardNumber", ()=>validateCardNumber);
-parcelHelpers.export(exports, "validateCardDate", ()=>validateCardDate);
-parcelHelpers.export(exports, "validateCVV", ()=>validateCVV);
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.validateCVV = validateCVV;
+exports.validateCardDate = validateCardDate;
+exports.validateCardHolder = validateCardHolder;
+exports.validateCardNumber = validateCardNumber;
 function validateCardHolder(input) {
     console.log("Card Holder Input:", input);
     const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
@@ -2281,13 +2287,26 @@ function validateCardHolder(input) {
     console.log("Card Holder Validation Result:", isValid);
     return isValid;
 }
-function validateCardNumber(input) {
+/*
+export function validateCardNumber(input) {
+  console.log("Card Number Input:", input);
+
+  const regex = /^[0-9]+$/; 
+  const isValidFormat = regex.test(input);
+
+
+  const numericInput = input.replace(/[- ]/g, '');
+  const isValidLength = numericInput.length === 16;
+  
+  const isValid = isValidFormat && isValidLength;
+  console.log("Card Number Validation Result:", isValid);
+
+  return isValid;
+}*/ function validateCardNumber(input) {
     console.log("Card Number Input:", input);
-    const regex = /^[0-9 -]+$/;
-    const isValidFormat = regex.test(input);
-    const numericInput = input.replace(/[- ]/g, "");
-    const isValidLength = numericInput.length === 16;
-    const isValid = isValidFormat && isValidLength;
+    const numericInput = input.replace(/[^0-9-]/g, "");
+    const isValidFormat = /^\d{16}$/.test(numericInput);
+    const isValid = isValidFormat;
     console.log("Card Number Validation Result:", isValid);
     return isValid;
 }
@@ -2306,6 +2325,6 @@ function validateCVV(input) {
     return isValid;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"dVOym"}]},["9vOdb","bB7Pu"], "bB7Pu", "parcelRequirec832")
+},{}]},["2UeK4","bB7Pu"], "bB7Pu", "parcelRequirec832")
 
 //# sourceMappingURL=index.3d214d75.js.map
