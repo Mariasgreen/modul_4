@@ -139,7 +139,7 @@ const updateCardInfo = () =>{
  
 
 
-    spanCardNumber.textContent = cardNumber ? cardNumber  : "xxxx-xxxx-xxxx-xxxx";
+    spanCardNumber.textContent = cardNumber ? cardNumber  : "xxxx xxxx xxxx xxxx";
     spanCardName.textContent = cardHolder ? cardHolder : "John Doe";
     spanCardDate.textContent = cardDate ? cardDate : "MM/YY";
   }
@@ -200,5 +200,3 @@ mount(body, divWrapper);
 
 
 mount(document.documentElement, body);
-
-

@@ -23,7 +23,7 @@ describe('Проверка держателя карты', () => {
 
 describe('Проверка номера карты', () => {
     it('Проверка номера карты только числовые символы', () => {
-        expect(validateCardNumber('1234 5678 9012 3456')).toBe(true);
+        expect(validateCardNumber('1234567890123456')).toBe(true);
     });
 
     it('Проверка номера карты с кириллическими символами !ошибка', () => {
@@ -74,5 +74,3 @@ describe('Проверка CVV/CVC', () => {
         expect(validateCVV('12a')).toBe(false);
     });
 });
-
-

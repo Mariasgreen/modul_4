@@ -8,10 +8,11 @@ export function validateCardHolder(input) {
     return isValid;
   }
   
+  /*
   export function validateCardNumber(input) {
     console.log("Card Number Input:", input);
   
-    const regex = /^[0-9 -]+$/; 
+    const regex = /^[0-9]+$/; 
     const isValidFormat = regex.test(input);
   
  
@@ -22,7 +23,24 @@ export function validateCardHolder(input) {
     console.log("Card Number Validation Result:", isValid);
   
     return isValid;
+  }*/
+  
+
+  export function validateCardNumber(input) {
+    console.log("Card Number Input:", input);
+  
+   
+    const numericInput = input.replace(/[^0-9-]/g, '');
+  
+  
+    const isValidFormat = /^\d{16}$/.test(numericInput);
+  
+    const isValid = isValidFormat;
+    console.log("Card Number Validation Result:", isValid);
+  
+    return isValid;
   }
+  
   
   export function validateCardDate(input) {
     console.log("Card Date Input:", input);
